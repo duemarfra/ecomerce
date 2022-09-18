@@ -1,0 +1,31 @@
+<section>
+    <div>
+        <h2> <%= link_to "Marks", root_path %> </h2>
+        <ul>
+            <% @marks.map { |mark| %>
+                <li>
+                    <%= link_to mark.name, mark %>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+
+    <div>
+         <ul>
+            <% @marks.map { |mark| %>
+
+                <ul>
+                    <% mark.phones.map { |smart| %>
+                        <li>
+                            <%= image_tag smart.photo %><br>
+                            <%= smart.name %><br>
+                            <%= smart.price %><br>
+                            <%= link_to "buy", "https://mercadopago.com" %>
+                        </li>
+                    <% } %>
+                </ul>
+                
+            <% } %>
+        </ul>
+    </div>
+</section>

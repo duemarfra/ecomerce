@@ -1,0 +1,13 @@
+<h3> <%= @mark.name %> </h3>
+
+<ul>
+    <% @mark.phones.map { |smart| %>
+        <li>
+            <%= image_tag smart.photo %><br>
+            <%= smart.name %><br>
+            <%= smart.price %><br>
+            <%= link_to "pay", "https://mercadopago.com" %>
+        </li>
+    <% } %>
+</ul>
+
